@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginTop="8dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="3dp"
+        app:contentPadding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/icon"
+                   android:src="@drawable/ic_curry"/>
+        <LinearLayout android:layout_width="0dp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="16dp"
+                      android:layout_weight="1"
+                      android:orientation="vertical">
+            <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/foodTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"/>
+            <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:id="@+id/foodDescription"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:src="@drawable/ic_add_box_black_24dp"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_marginLeft="8dp"
+                          android:layout_height="wrap_content"/>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="64dp"
+                        android:src="@drawable/ic_minus_black_24dp"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:layout_marginLeft="8dp"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
