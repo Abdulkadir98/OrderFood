@@ -27,8 +27,12 @@ class FoodFragment: Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.context!!)
 
+        val sectionNumber = arguments!![ARG_SECTION_NUMBER].toString().toInt()
+
         foodViewModel.allFoodItems.observe(this, Observer {
-            foodItems -> foodItems?.let { adapter.setFoodItems(it) }
+            foodItems -> foodItems?.let {
+            adapter.setFoodItems(it, sectionNumber)
+        }
         })
 
         return rootView

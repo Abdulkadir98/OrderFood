@@ -32,8 +32,12 @@ class FoodListAdapter internal constructor(
         return FoodViewHolder(itemView, itemClick)
     }
 
-    internal fun setFoodItems(foodItems: List<Food>) {
-        this.foodItems = foodItems
+    internal fun setFoodItems(foodItems: List<Food>, sectionNumber: Int) {
+        when(sectionNumber) {
+            1 -> this.foodItems = foodItems.filter { it.cuisine == "Indian" }
+            2 -> this.foodItems = foodItems.filter { it.cuisine == "Chinese" }
+            3 -> this.foodItems = foodItems.filter { it.cuisine == "Italian" }
+        }
         notifyDataSetChanged()
     }
 
