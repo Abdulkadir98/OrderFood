@@ -9,6 +9,7 @@ import com.example.admin.orderfood.R
 import com.example.admin.orderfood.adapters.CuisinePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.find
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.action_cart) {
+            startActivity<CartActivity>()
             return true
         }
 

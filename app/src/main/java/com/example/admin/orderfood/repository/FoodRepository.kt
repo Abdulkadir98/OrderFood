@@ -14,5 +14,15 @@ class FoodRepository(private val foodDao: FoodDao) {
         foodDao.insert(food)
     }
 
+    @WorkerThread
+    suspend fun increase(id: Int) {
+        foodDao.increaseQuantityOfFood(id)
+    }
+
+    @WorkerThread
+    suspend fun decrease(id: Int) {
+        foodDao.decreaseQuantityOfFood(id)
+    }
+
 
 }

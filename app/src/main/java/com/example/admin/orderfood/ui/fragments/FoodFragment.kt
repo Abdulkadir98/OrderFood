@@ -11,7 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.admin.orderfood.R
 import com.example.admin.orderfood.adapters.FoodListAdapter
+import com.example.admin.orderfood.model.Food
+import com.example.admin.orderfood.ui.activities.DescriptionActivity
 import com.example.admin.orderfood.ui.view.FoodViewModel
+import org.jetbrains.anko.support.v4.startActivity
+import org.jetbrains.anko.support.v4.toast
 
 class FoodFragment: Fragment() {
     private lateinit var foodViewModel: FoodViewModel
@@ -23,7 +27,23 @@ class FoodFragment: Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
         val recyclerView = rootView.findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = FoodListAdapter(this.context!!) {}
+        val adapter = FoodListAdapter(activity!!) { food: Food, view: View ->
+
+            when(view.id) {
+                R.id.container -> startActivity<DescriptionActivity>(DescriptionActivity.TITLE to food.title,
+                    DescriptionActivity.DESCRIPTION to food.description,
+                    DescriptionActivity.PRICE to food.price,
+                    DescriptionActivity.QUANTITY to food.quantity)
+
+                R.id.plusBtn -> {foodViewModel.increase(food.id)
+                                this.toast("Added to Cart!") }
+                R.id.minusBtn ->  {
+                    foodViewModel.decrease(food.id)
+                    this.toast("Removed from Cart!")
+                }
+            }
+
+        }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.context!!)
 

@@ -7,6 +7,7 @@
         app:cardCornerRadius="12dp"
         app:cardElevation="3dp"
         app:contentPadding="8dp"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <LinearLayout
@@ -32,16 +33,6 @@
                     android:paddingTop="8dp"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"/>
-            <TextView
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="monospace"
-                    android:id="@+id/foodDescription"
-                    android:paddingLeft="8dp"
-                    android:paddingTop="8dp"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp"/>
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -51,6 +42,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
+                        android:id="@+id/plusBtn"
+                        android:background="?attr/selectableItemBackground"
                         android:src="@drawable/ic_add_box_black_24dp"/>
                 <TextView android:layout_width="wrap_content"
                           android:layout_gravity="center_vertical"
@@ -60,6 +53,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="64dp"
+                        android:id="@+id/minusBtn"
+                        android:background="?attr/selectableItemBackground"
                         android:src="@drawable/ic_minus_black_24dp"/>
                 <TextView android:layout_width="wrap_content"
                           android:layout_gravity="center_vertical"

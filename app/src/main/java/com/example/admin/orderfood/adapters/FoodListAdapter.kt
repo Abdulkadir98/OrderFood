@@ -10,26 +10,29 @@ import com.example.admin.orderfood.model.Food
 import kotlinx.android.synthetic.main.food_tem.view.*
 
 class FoodListAdapter internal constructor(
-    context: Context, val itemClick: (Food) -> Unit
+     context: Context, val itemClick: (Food, View) -> Unit
 ) : RecyclerView.Adapter<FoodListAdapter.FoodViewHolder>() {
+
+
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var foodItems = emptyList<Food>() // Cached copy of food items.
 
-    inner class FoodViewHolder(itemView: View, itemClick: (Food) -> Unit) : RecyclerView.ViewHolder(itemView) {
+    inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindFoodItem(food: Food) {
             with(food) {
-                itemView.foodTitle.text = title
-                itemView.foodDescription.text = description
 
-                itemView.setOnClickListener { itemClick(this) }
+                itemView.foodTitle.text = title
+                itemView.plusBtn.setOnClickListener { itemClick(this, it) }
+                itemView.minusBtn.setOnClickListener { itemClick(this, it) }
+                itemView.setOnClickListener { itemClick(this, it) }
             }
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodListAdapter.FoodViewHolder {
         val itemView = inflater.inflate(R.layout.food_tem, parent, false)
-        return FoodViewHolder(itemView, itemClick)
+        return FoodViewHolder(itemView)
     }
 
     internal fun setFoodItems(foodItems: List<Food>, sectionNumber: Int) {

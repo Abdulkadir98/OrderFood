@@ -27,9 +27,13 @@ class FoodViewModel(application: Application) : AndroidViewModel(application) {
         allFoodItems = repository.allFoodItems
     }
 
-    fun insert(food: Food) = scope.launch(Dispatchers.IO) {
-        repository.insert(food)
+    fun increase (id: Int) = scope.launch(Dispatchers.IO) {
+        repository.increase(id)
     }
+    fun decrease (id: Int) = scope.launch(Dispatchers.IO) {
+        repository.decrease(id)
+    }
+
 
     override fun onCleared() {
         super.onCleared()

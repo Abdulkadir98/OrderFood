@@ -54,13 +54,33 @@ public abstract class FoodRoomDatabase: RoomDatabase() {
             foodDao.deleteAll()
 
             var food = Food(
-                title = "Biriyani", description = "Mutton rice with masala!", price = 100f,
-                cuisine = "Indian"
+                title = "Biriyani", description = "Mutton rice with masala!", price = 200f,
+                cuisine = "Indian", quantity = 0
             )
             foodDao.insert(food)
-            food = Food(title = "Pasta", description = "Baked bread with toppings", price = 100f, cuisine = "Italian")
+            food = Food(title = "Dosa", description = "Mutton rice with masala!", price = 100f,
+                cuisine = "Indian", quantity = 0)
             foodDao.insert(food)
-            food = Food(title = "Dumplings", description = "A chinese dish", price = 60f, cuisine = "Chinese")
+            food = Food(title = "Chapati", description = "Mutton rice with masala!", price = 100f,
+                cuisine = "Indian", quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Pasta", description = "Baked bread with toppings", price = 100f, cuisine = "Italian",
+                quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Panzenella", description = "Baked bread with toppings", price = 200f, cuisine = "Italian",
+                quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Margherita Pizza", description = "Baked bread with toppings", price = 200f, cuisine = "Italian",
+                quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Dumplings", description = "A chinese dish", price = 60f, cuisine = "Chinese",
+                quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Spinach Noodles", description = "A chinese dish", price = 150f, cuisine = "Chinese",
+                quantity = 0)
+            foodDao.insert(food)
+            food = Food(title = "Fried Mashi", description = "A chinese dish", price = 90f, cuisine = "Chinese",
+                quantity = 0)
             foodDao.insert(food)
         }
 
