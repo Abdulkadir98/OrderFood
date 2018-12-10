@@ -20,11 +20,13 @@ class FoodViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: FoodRepository
     val allFoodItems: LiveData<List<Food>>
+    val cartFoodItems: LiveData<List<Food>>
 
     init {
         val foodDao = FoodRoomDatabase.getDatabase(application, scope).foodDao()
         repository = FoodRepository(foodDao)
         allFoodItems = repository.allFoodItems
+        cartFoodItems = repository.cartItems
     }
 
     fun increase (id: Int) = scope.launch(Dispatchers.IO) {

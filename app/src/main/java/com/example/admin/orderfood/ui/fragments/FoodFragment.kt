@@ -32,6 +32,7 @@ class FoodFragment: Fragment() {
             when(view.id) {
                 R.id.container -> startActivity<DescriptionActivity>(DescriptionActivity.TITLE to food.title,
                     DescriptionActivity.DESCRIPTION to food.description,
+                    DescriptionActivity.ID to food.id,
                     DescriptionActivity.PRICE to food.price,
                     DescriptionActivity.QUANTITY to food.quantity)
 

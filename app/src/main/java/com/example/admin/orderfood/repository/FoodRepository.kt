@@ -8,6 +8,7 @@ import com.example.admin.orderfood.model.FoodDao
 class FoodRepository(private val foodDao: FoodDao) {
 
     val allFoodItems: LiveData<List<Food>> = foodDao.getAllFood()
+    val cartItems: LiveData<List<Food>> = foodDao.getFoodItemsInCart()
 
     @WorkerThread
     suspend fun insert(food: Food){

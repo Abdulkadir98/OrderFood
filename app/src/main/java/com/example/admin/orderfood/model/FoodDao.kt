@@ -23,4 +23,7 @@ interface FoodDao {
 
     @Query("UPDATE food_table SET quantity = quantity - 1 WHERE quantity > 0 AND id = :id")
     fun decreaseQuantityOfFood(id: Int)
+
+    @Query("SELECT * FROM food_table WHERE quantity > 0")
+    fun getFoodItemsInCart() : LiveData<List<Food>>
 }
