@@ -39,7 +39,7 @@ class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             itemView.foodTitle.text = title
             itemView.price.text = "Price (1 qty): ${price}"
             val totalPrice = price * quantity
-            itemView.totalPrice.text = "Total Price: ${totalPrice}"
+            itemView.totalPrice.text = "Total Price (1x${quantity}): ${totalPrice}"
 
         }
     }

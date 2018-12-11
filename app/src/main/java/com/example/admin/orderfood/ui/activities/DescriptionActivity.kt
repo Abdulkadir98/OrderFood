@@ -3,7 +3,7 @@ package com.example.admin.orderfood.ui.activities
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageButton
+import android.support.v7.widget.AppCompatButton
 import com.example.admin.orderfood.R
 import com.example.admin.orderfood.ui.view.FoodViewModel
 import kotlinx.android.synthetic.main.activity_description.*
@@ -12,8 +12,8 @@ import org.jetbrains.anko.toast
 
 class DescriptionActivity : AppCompatActivity() {
 
-    private lateinit var plusBtn: ImageButton
-    private lateinit var minusBtn: ImageButton
+    private lateinit var plusBtn: AppCompatButton
+    private lateinit var minusBtn: AppCompatButton
 
     private lateinit var foodViewModel: FoodViewModel
 

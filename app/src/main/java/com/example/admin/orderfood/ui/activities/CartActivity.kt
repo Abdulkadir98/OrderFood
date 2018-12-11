@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.TextUtils
+import android.view.View
 import android.widget.EditText
 import com.example.admin.orderfood.R
 import com.example.admin.orderfood.adapters.CartListAdapter
@@ -42,6 +43,15 @@ class CartActivity : AppCompatActivity() {
 
         foodViewModel.cartFoodItems.observe(this, Observer {
             cartItems -> cartItems?.let {
+
+            if(cartItems.size > 0) {
+                emptyView.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
+                couponContainer.visibility = View.VISIBLE
+                grandTotalContainer.visibility = View.VISIBLE
+            }
+
+
             adapter.setItems(it)
             it.forEach {
                 totalPrice = it.price * it.quantity
@@ -61,6 +71,9 @@ class CartActivity : AppCompatActivity() {
                     grandTotalText.text = "Grand Total: ${grandTotal * 0.8}"
                     toast("coupon applied!")
 
+                }
+                else if (editText.text.toString() == "F22LABS" && grandTotal <= 400f) {
+                    toast("Coupon valid only for orders greater than 400!")
                 }
             }
         }

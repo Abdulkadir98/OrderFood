@@ -24,6 +24,7 @@ class FoodListAdapter internal constructor(
             with(food) {
 
                 itemView.foodTitle.text = title
+                itemView.qtyView.text = "${quantity}"
                 itemView.plusBtn.setOnClickListener { itemClick(this, it) }
                 itemView.minusBtn.setOnClickListener { itemClick(this, it) }
                 itemView.setOnClickListener { itemClick(this, it) }

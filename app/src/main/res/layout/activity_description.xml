@@ -35,40 +35,29 @@
                         android:paddingTop="8dp"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"/>
-                <RelativeLayout
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
                         android:layout_marginBottom="8dp">
-                    <ImageButton
-                            android:layout_width="wrap_content"
+                    <android.support.v7.widget.AppCompatButton
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:id="@+id/plus_btn"
-                            android:layout_marginLeft="80dp"
-                            android:background="?attr/selectableItemBackground"
-                            android:src="@drawable/ic_add_box_black_24dp"/>
-                    <TextView android:layout_width="wrap_content"
-                              android:layout_marginLeft="8dp"
-                              android:layout_alignBottom="@id/plus_btn"
-                              android:id="@+id/plus_qty"
-                              android:layout_toRightOf="@id/plus_btn"
-                              android:layout_height="wrap_content"/>
-                    <ImageButton
-                            android:layout_width="wrap_content"
+                            style="@style/AppTheme.Button"
+                            android:text="Add"/>
+                    <android.support.v7.widget.AppCompatButton
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:id="@+id/minus_btn"
-                            android:layout_marginLeft="80dp"
-                            android:layout_toRightOf="@id/plus_qty"
-                            android:background="?attr/selectableItemBackground"
-                            android:src="@drawable/ic_minus_black_24dp"/>
-                    <TextView android:layout_width="wrap_content"
-                              android:layout_marginLeft="8dp"
-                              android:id="@+id/minus_qty"
-                              android:layout_alignBottom="@id/minus_btn"
-                              android:layout_toRightOf="@id/minus_btn"
-                              android:layout_height="wrap_content"/>
+                            style="@style/AppTheme.Button"
+                            android:layout_weight="1"
+                            android:text="Remove"/>
 
-            </RelativeLayout>
+
+            </LinearLayout>
 
 
         </LinearLayout>

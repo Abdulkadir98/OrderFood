@@ -20,9 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.DescriptionActivity">
+        <activity android:name=".ui.activities.DescriptionActivity"
+        android:parentActivityName=".ui.activities.MainActivity">
         </activity>
-        <activity android:name=".ui.activities.CartActivity">
+        <activity android:name=".ui.activities.CartActivity"
+        android:parentActivityName=".ui.activities.MainActivity">
         </activity>
     </application>
 
